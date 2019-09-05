@@ -1,0 +1,38 @@
+<form (ngSubmit)="salvar()">   
+ 
+    <br/>
+    <h3>{{titulo}}</h3>
+ 
+    <label>Código:
+        <input type="input" name="codigo" size="10" [(ngModel)]="pessoa.codigo" disabled/>
+    </label><br/><br/>
+ 
+    <label>Nome:
+        <input type="input" name="nome" size="30" [(ngModel)]="pessoa.nome"/>
+    </label><br/><br/>
+ 
+ 
+     <label>Título:
+        <input type="input" name="titulo" size="30" [(ngModel)]="pessoa.titulo"/>
+    </label><br/><br/>
+    
+        <label>Descrição:
+        <input type="input" name="nome" size="30" [(ngModel)]="pessoa.descricao"/>
+    </label><br/><br/>
+    
+        <label>Data de publicação:
+        <input type="input" name="dataPublicacao" size="30" [(ngModel)]="pessoa.dataPublicacao"/>
+    </label><br/><br/>
+    
+        <label>Data de visualização:
+        <input type="input" name="dataVisualizacao" size="30" [(ngModel)]="pessoa.dataVisualizacao"/>
+    </label><br/><br/>
+   
+  
+    <label>Registro Ativo:
+        <input type="radio" name="ativo" [(ngModel)]="pessoa.ativo" [value]="true">Sim
+        <input type="radio" name="ativo" [(ngModel)]="pessoa.ativo" [value]="false">Não<br>
+    </label><br/><br/>
+ 
+    <button type="submit">Salvar</button>
+</form>

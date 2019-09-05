@@ -1,0 +1,35 @@
+<h3>{{titulo}}</h3>
+ 
+<table>
+    <thead>
+    <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Título</th>
+        <th>Descrição</th>
+        <th>Data de publicação</th>
+        <th>Data de visualização</th>
+        <th>Reg. Ativo</th>
+        <th>Editar</th>
+        <th>Excluir</th>
+    </tr>
+    </thead>
+ 
+    <tbody>
+        <tr *ngFor="let pessoa of pessoas; let i = index;">
+        <td>{{ pessoa.codigo }}</td>        
+        <td>{{ pessoa.nome }}</td>          
+        <td>{{ pessoa.titulo }}</td>          
+        <td>{{ pessoa.descricao }}</td>          
+        <td>{{ pessoa.dataPublicacao }}</td>          
+        <td>{{ pessoa.dataVisualizacao }}</td>        
+        <td *ngIf='pessoa.ativo'>Sim</td>
+        <td *ngIf='!pessoa.ativo'>Não</td>
+        <td><a (click)="editar(pessoa.codigo);">Editar</a></td>
+        <td><a (click)="excluir(pessoa.codigo, i);">Excluir</a></td>
+        </tr>
+        <tr>
+           <td colspan="6" style="text-align: right;">Total de Registros: {{ pessoas.length }}</td> 
+        </tr>
+    </tbody>
+</table>
